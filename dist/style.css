@@ -1,0 +1,83 @@
+.corner {
+    position: fixed;
+    z-index: 1000;
+}
+
+.corner-part {
+    position: absolute;
+    background-color: #454138;
+}
+
+.corner-part.horizontal {
+    height: 3px;
+    width: 3lh;
+}
+
+.corner-part.vertical {
+    width: 3px;
+    height: 3lh;
+}
+
+.top-left {
+    top: 1rem;
+    left: 1rem;
+}
+
+.top-left .horizontal {
+    top: 0;
+    left: 0;
+}
+
+.top-left .vertical {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 1rem;
+    right: 1rem;
+}
+
+.top-right .horizontal {
+    top: 0;
+    right: 0;
+}
+
+.top-right .vertical {
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.bottom-left .horizontal {
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+}
+
+.bottom-left .vertical {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.bottom-right .horizontal {
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+}
+
+.bottom-right .vertical {
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+}
