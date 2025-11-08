@@ -73,7 +73,6 @@
 .bottom-right .horizontal {
     bottom: 0;
     right: 0;
-    transform: translateY(100%);
 }
 
 .bottom-right .vertical {
