@@ -31,10 +31,63 @@
 
     <div class="center-menu">
         <h1>Welcome to My Portfolio</h1>
+        <a class="button menu-button" href="#about">About Me</a>
+        <br/>
+        <br/>
         <a class="button menu-button" href="#projects">Projects</a>
         <br/>
         <br/>
-        <a class="button menu-button" href="#about">About Me</a>
+        <a class="button menu-button" href="#contact">Contacts</a>
+        <br/>
+        <br/>
+        <a class="button menu-button" href="#experience">Experience</a>
     </div>
+
+    <div class="content" id="about">
+        <h2>About Me</h2>
+        <p>Placeholder</p>
+    </div>
+    <div class="content" id="projects">
+        <h2>Projects</h2>
+        <p>Placeholder</p>
+    </div>
+    <div class="content" id="contact">
+        <h2>Contact</h2>
+        <p>Placeholder</p>
+    </div>
+    <div class="content" id="experience">
+        <h2>Experience</h2>
+        <p>Placeholder</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.menu-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = button.getAttribute('href').substring(1);
+                
+                const menu = document.querySelector('.center-menu');
+                menu.classList.add('slide-left','fade-out');
+
+                document.querySelectorAll(".content").forEach(c => c.classList.remove("active"));
+
+                setTimeout(() => {
+                    document.getElementById(targetId).classList.add('active');
+                }, 600)
+            });
+        });
+
+        const firstButton = document.querySelector('.menu-button');
+        const contentSections = document.querySelectorAll('.content');
+
+        if (firstButton) {
+            const buttonRect = firstButton.getBoundingClientRect();
+            const offsetTop = buttonRect.top + window.scrollY;
+
+            contentSections.forEach(section => {
+                section.style.top = `${offsetTop}px`;
+            });
+        }
+    </script>
 </body>
 </html>
